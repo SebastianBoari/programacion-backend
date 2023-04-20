@@ -27,23 +27,27 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
     <tr width="100%">
         <td width="25%">
             <h3>Clase 1</h3>
+            ![](https://i.imgur.com/W4vn0Wc.png)
             <p>Principios de programación Backend & Principios básicos de Javascript</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-1/index.js" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código</a>
         </td>
         <td width="25%">
             <h3>Clase 2</h3>
+            ![](https://i.imgur.com/1j2Q6Tm.png)
             <p>Nuevas funcionalidades de los lenguajes ECMAScritpt & Programación sincrónica y asincrónica</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-2/index.js" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código</a>
             <a href="https://github.com/SebastianBoari/backend-desafio-clase2/blob/main/index.js" style="font-weight: bold;  background-color: #f3e300; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Desafío</a>
         </td>
         <td width="25%">
             <h3>Clase 3</h3>
+            ![](https://i.imgur.com/OWmxcf0.png)
             <p>Manejo de archivos en JavaScript & Administrador de paquetes NPM</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-3/index.js" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código </a>
             <a href="https://github.com/SebastianBoari/backend-desafio-clase3/blob/main/ProductManager.js" style="font-weight: bold; background-color: #f3e300; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Desafío</a>
         </td>
         <td width="25%">
             <h3>Clase 4</h3>
+            ![](https://i.imgur.com/18pMOBs.png)
             <p>Servidores web & Express avanzado</p>
             <a href="#" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código</a>
             <a href="#" style="font-weight: bold; background-color: #f3e300; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Desafío</a>
@@ -52,12 +56,14 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
     <tr width="100%">
         <td width="25%">
             <h3>Clase 5</h3>
+            ![](https://i.imgur.com/MKhUc4S.png)
             <p>Router y Multer & Motores de plantillas</p>
             <a href="#" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código</a>
             <a href="#" style="font-weight: bold; background-color: #f3e300; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Desafío</a>
         </td>
         <td width="25%">
             <h3>Clase 6</h3>
+            ![](https://i.imgur.com/TEEieBw.png)
             <p>Motores de plantillas & Aplicación chat con Websockets</p>
             <a href="#" style="font-weight: bold; background-color: #1b1b1a; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Código</a>
             <a href="#" style="font-weight: bold; background-color: #f3e300; color: white; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none;">Desafío</a>
