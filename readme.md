@@ -54,8 +54,8 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             <h3>Clase 4</h3>
             <p>Servidores web & Express</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
-                <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-4/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/desafio-clase4-servidor-con-express-boari"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
     </tr>
@@ -65,8 +65,8 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             <h3>Clase 5</h3>
             <p>Router y Multer & Motores de plantillas</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
-                <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-5/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/boari-primera-entrega-proyecto-fnal-backend/blob/main/src/server.js"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
         <td >
