@@ -1,0 +1,60 @@
+
+#section{
+    width: 100vw;
+    height: 100vh;
+}
+#section article{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+#section #title{
+    margin: 32px 0 0;
+    padding: 16px;
+    color: whitesmoke;
+}
+#section #form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+#section #form #inputSubmit{
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 600;
+}
+#section #form textarea{
+    width: 100%;
+    padding: 16px;
+    transition: all .3s;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 180px;
+}
+#section textarea:focus{
+    outline: none;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.45);
+}
+
+#section #history{
+    min-height: 240px;
+    padding: 32px;
+}
+#section #history .msg{
+    padding: 8px;
+    border-radius: 6px;
+    max-width: 75%;
+}
+#section #history .msg h4{
+    font-size: 12px;
+    color: whitesmoke;
+}
+#section #history .msg p{
+    background-color: rgb(46, 46, 46);
+    font-size: 14px;
+    color: whitesmoke;
+    padding: 8px;
+    border-radius: 6px;
+    word-wrap: break-word;
+}
