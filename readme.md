@@ -79,8 +79,9 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             </div>
         </td>
         <td >
+            <img src="https://i.imgur.com/lRqyjLq.png">
             <h3>Clase 7</h3>
-            <p>MongoDB & CRUD en MongoDB</p>
+            <p>Concepto de base de datos, bases de datos relacionales y no relacionales. Introducción e instalación de MongoDB, Mongo Shell, CRUD, Filtros y proyecciones.</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-7/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
         </td>
         <td >
