@@ -85,11 +85,12 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-7/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
         </td>
         <td >
+            <img src="https://i.imgur.com/uffRaZQ.png">
             <h3>Clase 8</h3>
-            <p>Mongoose & Primera práctica integradora</p>
+            <p>Mongoose, clientes de bases de datos, DBaaS y primer práctica integradora.</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
-                <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-8/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/boari-practica-de-integracion-sobre-tu-ecommerce"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
     </tr>
