@@ -74,14 +74,15 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             <h3>Clase 6</h3>
             <p>Motores de plantillas & Aplicación chat con Websockets</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
-                <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-6/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/desafio-websockets-handlebars-programacion-backend"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
         <td >
+            <img src="https://i.imgur.com/lRqyjLq.png">
             <h3>Clase 7</h3>
-            <p>MongoDB & CRUD en MongoDB</p>
-            <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+            <p>Concepto de base de datos, bases de datos relacionales y no relacionales. Introducción e instalación de MongoDB, Mongo Shell, CRUD, Filtros y proyecciones.</p>
+            <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-7/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
         </td>
         <td >
             <h3>Clase 8</h3>
