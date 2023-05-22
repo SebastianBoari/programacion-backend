@@ -26,13 +26,11 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
 <table >
     <tr>
         <td>
-            <img src="https://i.imgur.com/rmay2F8.png">
             <h3>Clase 1</h3>
             <p>Principios de programación Backend & Principios básicos de Javascript</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-1/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
         </td>
         <td >
-            <img src="https://i.imgur.com/7TBtfyc.png">
             <h3>Clase 2</h3>
             <p>Nuevas funcionalidades de los lenguajes ECMAScritpt & Programación sincrónica y asincrónica</p>
             <div style="display: flex; gap: 8px">
@@ -41,7 +39,6 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             </div>
         </td>
         <td >
-            <img src="https://i.imgur.com/IMcMtpz.png">
             <h3>Clase 3</h3>
             <p>Manejo de archivos en JavaScript & Administrador de paquetes NPM</p>
             <div style="display: flex; gap: 8px">
@@ -50,7 +47,6 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             </div>
         </td>
         <td >
-            <img src="https://i.imgur.com/yp07PhY.png">
             <h3>Clase 4</h3>
             <p>Servidores web & Express</p>
             <div style="display: flex; gap: 8px">
@@ -61,7 +57,6 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
     </tr>
     <tr width="100%">
         <td >
-            <img src="https://i.imgur.com/JIWvOqu.png">
             <h3>Clase 5</h3>
             <p>Router y Multer & Motores de plantillas</p>
             <div style="display: flex; gap: 8px">
@@ -70,7 +65,6 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             </div>
         </td>
         <td >
-            <img src="https://i.imgur.com/MTdqxZD.png">
             <h3>Clase 6</h3>
             <p>Motores de plantillas & Aplicación chat con Websockets</p>
             <div style="display: flex; gap: 8px">
@@ -79,13 +73,11 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             </div>
         </td>
         <td >
-            <img src="https://i.imgur.com/lRqyjLq.png">
             <h3>Clase 7</h3>
             <p>Concepto de base de datos, bases de datos relacionales y no relacionales. Introducción e instalación de MongoDB, Mongo Shell, CRUD, Filtros y proyecciones.</p>
             <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-7/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
         </td>
         <td >
-            <img src="https://i.imgur.com/uffRaZQ.png">
             <h3>Clase 8</h3>
             <p>Mongoose, clientes de bases de datos, DBaaS y primer práctica integradora.</p>
             <div style="display: flex; gap: 8px">
