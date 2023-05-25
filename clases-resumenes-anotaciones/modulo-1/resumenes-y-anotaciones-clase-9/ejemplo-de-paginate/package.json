@@ -1,0 +1,17 @@
+{
+  "name": "ejemplo-de-paginate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^7.2.1",
+    "mongoose-paginate-v2": "^1.7.1"
+  }
+}

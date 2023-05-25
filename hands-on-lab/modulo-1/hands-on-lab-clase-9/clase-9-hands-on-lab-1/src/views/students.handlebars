@@ -1,0 +1,31 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Genero</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each students.docs}}
+            <tr>
+                <td>{{this.first_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.gender}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div>
+        {{#if students.hasPrevPage}}
+            <a href="{{students.prevLink}}">Anterior</a>
+        {{/if}}
+        {{#if students.hasNextPage}}
+            <a href="{{students.nextLink}}">Siguiente</a>
+        {{/if}}
+    </div>
+</div>
