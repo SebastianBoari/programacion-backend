@@ -91,15 +91,15 @@ Coleccion de resumenes, actividades y desafios entregables del curso de Programa
             <h3>Clase 9</h3>
             <p>Mongo Avanzado (Parte I) & Mongo Avanzado (Parte II)</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
-                <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-1/resumenes-y-anotaciones-clase-9/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/segunda-pre-entrega-de-tu-proyecto-final-boari"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
         <td >
             <h3>Clase 10</h3>
             <p>Cookies, Sessions & Storages I & Cookies, Sessions & Storages II</p>
             <div style="display: flex; gap: 8px">
-                <a href="#"><img src="https://i.imgur.com/9pM5zrm.png"></a>
+                <a href="https://github.com/SebastianBoari/programacion-backend/blob/main/clases-resumenes-anotaciones/modulo-2/resumenes-y-anotaciones-clase-10/index.js"><img src="https://i.imgur.com/9pM5zrm.png"></a>
                 <a href="#"><img src="https://i.imgur.com/PU97PmK.png"></a>
             </div>
         </td>
