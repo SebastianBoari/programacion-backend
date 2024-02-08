@@ -1,5 +1,5 @@
 # Programacion Backend
-![](https://cdn.mobcoder.com/assets/blog_images/mern-stack/Mern-1_11zon.webp)
+![](https://res.cloudinary.com/practicaldev/image/fetch/s--vGG-kpwV--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/jy1eavpf2fm467w8uopz.jpeg)
 
 ### **Sobre el repositorio:**
 Coleccion de resumenes, actividades y desafios entregables del curso de Programacion Backend impartido por Coderhouse.
