@@ -36,3 +36,34 @@ Las principales funcionalidades de este release son:
 
 - Mayor control a los objetos con operadores rest y spread (aplicable tambien a arrays)
 
+### Nuevas implementaciones con ECMAScript 10 y 11
+
+A partir de estas implementaciones están estrechamente ligados con otros conceptos que iremos aprendiendo a lo largo del curso. Haremos énfasis en los elementos con los que podemos trabajar a esta altura del curso.
+
+### Javascript y ES10
+
+Las principales funcionalidades de este release son: 
+
+- String.trim(): Remueve los espacios innecesarios en una cadena. Sirve para validar cadenas enviadas vacías o eliminar los espacios iniciales y finales.
+
+- Array.flat(): Remueve anidaciones internas de arrays para dejar un arreglo plano.
+
+- Dynamic import: Permite importar sólo los módulos necesarios, ahorrando espacio y memoria.
+
+### Dynamic Import
+
+En los imports tradicionales terminamos importando TODOS LOS MÓDULOS, aun cuando no estamos utilizando todos al mismo tiempo.
+
+Dynamic import permite importar sólo los módulos necesarios según una situación particular, lo cual permite optimizar la utilización de recursos, al pedir a la computadora sólo lo que se esté utilizando.
+
+Es utilizado principalmente en códigos que utilizan el patrón de diseño Factory (más adelante lo abordaremos).
+
+
+### Javascript y ES11
+
+Las principales funcionalidades de este release son: 
+
+- Operador nullish: Sirve para poder colocar un valor por default a variables que podrían ser nulas o indefinidas
+
+- Variables privadas dentro de las clases, esto permite que algunas variables no sean accesibles desde el entorno de instancia de una clase.
+
