@@ -5,11 +5,25 @@ Temario:
 - Nuevas funciones de ECMAScript
 - Funciones más utilizadas en backend
 
-### ECMAScript 6
+### Repaso
 
-Desde la salida de ES5 en 2009 a la salida de ES6 en 2015 hubo un largo período de tiempo en el cual no hubo grandes actualizaciones en el lenguaje. La salida de ES6 marcó un antes y un después en la historia del lenguaje.
+En la primer clase se abordó el concepto de ECMAScript, y cómo éste influye en el lenguaje javascript.
 
-Muchos señalan ES6 la version de javascript donde empezó a ser un lenguaje "moderno".
+ECMAScript definirá los estándares y funcionalidades que tendrá el lenguaje con el fin de que los navegadores se ajusten a ello y pueda existir una compatibilidad más controlada.
+
+### Proceso de un cambio implementado por ECMAScript
+
+1. Se definen las nuevas funciones a implementar y se eliminan las obsoletas.
+
+2. Dichos cambios pasan a una etapa de prueba
+
+3. Se hace "release" de la nueva versión, los navegadores deberán ajustarse a la nueva versión.
+
+### Punto de partida: ECMAScript 6
+
+Hasta ECMAScript 6 en 2015 marcó un cambio de era en el lenguaje que no recibía grandes actualizaciones desde ECMAScript 5 en 2009. 
+
+El "javascript moderno" se refiere al lenguaje a partir de las actualizaciones del ECMAScript 6 en adelante.
 
 
 ### Javascript y ES7
