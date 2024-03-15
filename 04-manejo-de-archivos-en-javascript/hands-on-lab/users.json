@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Juan",
+		"surname": "Moreira",
+		"age": 28,
+		"course": "Desarrollo Web"
+	},
+	{
+		"name": "Martin",
+		"surname": "Fernandez",
+		"age": 32,
+		"course": "Programacion Java"
+	},
+	{
+		"name": "Julieta",
+		"surname": "Ochoa",
+		"age": 22,
+		"course": "Programacion C#"
+	}
+]

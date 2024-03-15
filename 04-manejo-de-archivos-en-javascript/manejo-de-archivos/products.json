@@ -1,0 +1,11 @@
+[
+	{
+		"id": 0,
+		"title": "Example",
+		"description": "This is an example product",
+		"price": 300,
+		"thumbnail": "www.example.com/example123.png",
+		"code": "example-code-123",
+		"stock": 999
+	}
+]
