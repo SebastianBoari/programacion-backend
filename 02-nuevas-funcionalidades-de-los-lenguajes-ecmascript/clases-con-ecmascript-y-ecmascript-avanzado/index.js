@@ -49,6 +49,7 @@ class ProductManager {
     }
 
     #validateCode(code) {
+
         return true
     }
 
