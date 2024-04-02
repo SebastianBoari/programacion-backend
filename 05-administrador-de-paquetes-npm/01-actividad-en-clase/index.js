@@ -36,6 +36,6 @@ class AgeCalculator {
 }
 
 
-const ageCalculator = new AgeCalculator('1998-07-01')
+const ageCalculator = new AgeCalculator('1984-08-32')
 
 console.log(`Han pasado ${ageCalculator.getDaysSinceBirth()} días.`)
