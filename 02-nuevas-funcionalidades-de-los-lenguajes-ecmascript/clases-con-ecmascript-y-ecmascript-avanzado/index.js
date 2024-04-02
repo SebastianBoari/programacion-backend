@@ -49,6 +49,15 @@ class ProductManager {
     }
 
     #validateCode(code) {
+        const products = this.getProducts()
+
+        const isCodeRepeated = products.find((product) => {
+            return product.code === code
+        })
+
+        if (isCodeRepeated) {
+            return false
+        }
 
         return true
     }
@@ -61,7 +70,7 @@ class ProductManager {
 
 const productManager = new ProductManager()
 
-// Array vacio
+// Array vacío
 console.log(productManager.getProducts())
 
 // Agregamos un producto
@@ -79,3 +88,6 @@ console.log(productManager.getProductById(1))
 
 // Nos devuelve error
 console.log(productManager.getProductById(2))
+
+// Agregamos un producto (ERROR CÓDIGO REPETIDO)
+console.log(productManager.addProduct('Vino', 'Excelente vino mendocino', 5760, 'https://th.bing.com/th/id/OIP.qHWp5etYZxNGaTfYYl2mCwHaHa?rs=1&pid=ImgDetMain', 'WINE-001', 248))

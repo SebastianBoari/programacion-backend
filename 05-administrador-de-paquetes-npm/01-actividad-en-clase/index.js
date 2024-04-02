@@ -14,7 +14,6 @@ Realizar un programa que utilice la  dependencia momentjs  (deberá instalarse p
 - Extra: Cambia tu moment a la versión 1.6.0, al no ser la misma versión mayor, nota el cambio al correr el programa.
 */
 
-
 import moment from 'moment'
 
 class AgeCalculator {
