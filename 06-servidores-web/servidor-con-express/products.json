@@ -1,0 +1,65 @@
+[
+	{
+		"id": 0,
+		"title": "Example",
+		"description": "This is an example product",
+		"price": 300,
+		"thumbnail": "www.example.com/example123.png",
+		"code": "example-code-123",
+		"stock": 999
+	},
+	{
+		"id": 1,
+		"title": "Cerveza",
+		"description": "Una cerveza Belga",
+		"price": 4,
+		"thumbnail": "www.imgur.com/imagen-de-la-cerveza-belga",
+		"code": "123EFG123",
+		"stock": 399
+	},
+	{
+		"id": 2,
+		"title": "Vino",
+		"description": "Un vino mendocino",
+		"price": 200,
+		"thumbnail": "www.imgur.com/imagen-del-vino-mendocino",
+		"code": "123ABC123",
+		"stock": 999
+	},
+	{
+		"id": 3,
+		"title": "Whisky",
+		"description": "Un whisky escocés",
+		"price": 150,
+		"thumbnail": "www.imgur.com/imagen-del-whisky-escoces",
+		"code": "456DEF456",
+		"stock": 200
+	},
+	{
+		"id": 4,
+		"title": "Ron",
+		"description": "Un ron cubano",
+		"price": 100,
+		"thumbnail": "www.imgur.com/imagen-del-ron-cubano",
+		"code": "789GHI789",
+		"stock": 500
+	},
+	{
+		"id": 5,
+		"title": "Ginebra",
+		"description": "Una ginebra inglesa",
+		"price": 50,
+		"thumbnail": "www.imgur.com/imagen-de-la-ginebra-inglesa",
+		"code": "101JKL101",
+		"stock": 300
+	},
+	{
+		"id": 6,
+		"title": "Tequila",
+		"description": "Un tequila mexicano",
+		"price": 80,
+		"thumbnail": "www.imgur.com/imagen-del-tequila-mexicano",
+		"code": "202MNO202",
+		"stock": 150
+	}
+]
