@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(8, 4, 24);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: whitesmoke;
+    font-family: sans-serif;
+}

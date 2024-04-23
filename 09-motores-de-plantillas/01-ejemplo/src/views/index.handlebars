@@ -1,0 +1,16 @@
+<div>
+    <h1>Hi, {{user.name}}</h1>
+
+    {{#if isAdmin}}
+    {{#each users}}
+    <div>
+        <h4>Full name: {{this.name}}, {{this.surname}}</h4>
+        <p>Age: {{this.age}}</p>
+        <p>Email: {{this.email}}</p>
+        <p>Tel. Number: {{this.telnumber}}</p>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>Unauthorized to view users list</p>
+    {{/if}}
+</div>
