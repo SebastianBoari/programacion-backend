@@ -19,7 +19,7 @@ app.post('/api/register', (req, res) => {
 
     users.push(user)
 
-    res.redirect('/login')
+    res.status(201).json({ payload: user })
 })
 
 app.get('/register', (req, res) => {

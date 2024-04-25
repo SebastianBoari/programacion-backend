@@ -20,4 +20,10 @@ registerForm.addEventListener('submit', (e) => {
         },
         body: JSON.stringify(user),
     })
+        .then((res) => {
+            res.json()
+        })
+        .then((res) => {
+            alert('Se ha registrado correctamente!')
+        })
 })
