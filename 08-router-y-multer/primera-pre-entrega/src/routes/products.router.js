@@ -42,18 +42,19 @@ router.post('/', uploader.array('media', 7), mediaPaths, async (req, res) => {
             price,
             status,
             stock,
-            category
+            category,
+            thumbnail
         } = data
 
-        if(!req.mediaPaths) {
-            const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category)
+        if(req.mediaPaths.length <= 0) {
+            const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, thumbnail)
             
             res.status(201).json({ status: newProduct })
-        }
-
-        const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, req.mediaPaths)
+        } else {
+            const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, req.mediaPaths)
             
-        res.status(201).json({ payload: newProduct })
+            res.status(201).json({ payload: newProduct })
+        }
     } catch (error) {
         res.status(500).json(error.message)
     }

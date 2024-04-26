@@ -1,1 +1,142 @@
-[]
+[
+	{
+		"id": 0,
+		"title": "Example",
+		"description": "This is an example product",
+		"price": 300,
+		"thumbnail": "www.example.com/example123.png",
+		"code": "example-code-123",
+		"stock": 999
+	},
+	{
+		"id": 1,
+		"title": "Vino mendocino",
+		"description": "Un buen vino mendocino",
+		"code": "AAAA-0000",
+		"price": 300,
+		"status": true,
+		"stock": 200,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://oportugues.com/505-large_default/El-Mendocino-Argentino-Malbec-Tinto-2019.jpg",
+			"https://th.bing.com/th/id/OIP.QKx1KZNEe7vfccN3-_bOOQHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain"
+		]
+	},
+	{
+		"id": 2,
+		"title": "Whisky Irlandes",
+		"description": "Un buen whisky Irlandes",
+		"code": "AAAA-0001",
+		"price": 130,
+		"status": true,
+		"stock": 100,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://i5.walmartimages.com/asr/182a8ea3-36ba-4ae5-b159-8be6f37a105f_1.282e95d76c9d2e256989ddb2245ca3bd.jpeg"
+		]
+	},
+	{
+		"id": 3,
+		"title": "Vermouth Rosso Italiano",
+		"description": "Un buen vermouth rosso Italiano",
+		"code": "AAAA-0002",
+		"price": 245,
+		"status": true,
+		"stock": 20,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/OIP.p2d7GHORqmfS9IRv4BhzaQHaJb?rs=1&pid=ImgDetMain"
+		]
+	},
+	{
+		"id": 4,
+		"title": "Gin Escoces",
+		"description": "Un buen Gin Escoces",
+		"code": "AAAA-0003",
+		"price": 75,
+		"status": true,
+		"stock": 40,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://a-static.mlcdn.com.br/800x560/gin-escoces-hendricks-garrafa-750ml/paodeacucar/1008452/104444785f6309eb1ae7c6fcc55f8250.jpeg"
+		]
+	},
+	{
+		"id": 5,
+		"title": "Vodka Ruso",
+		"description": "Un buen Vodka Ruso",
+		"code": "AAAA-0004",
+		"price": 50.99,
+		"status": true,
+		"stock": 25,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/R.ddf0a443c6aa5550649048e6c8163cd0?rik=SAYpVBeFhUUViA&pid=ImgRaw&r=0"
+		]
+	},
+	{
+		"id": 6,
+		"title": "Vodka Ruso",
+		"description": "Un buen Vodka Ruso",
+		"code": "AAAA-0005",
+		"price": 7,
+		"status": true,
+		"stock": 20,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/R.ddf0a443c6aa5550649048e6c8163cd0?rik=SAYpVBeFhUUViA&pid=ImgRaw&r=0"
+		]
+	},
+	{
+		"id": 7,
+		"title": "Jugo de naranja de Entre Rios",
+		"description": "Un buen jugo de naranja de Entre Rios",
+		"code": "AAAA-0006",
+		"price": 1.72,
+		"status": true,
+		"stock": 2000,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://geant.vteximg.com.br/arquivos/ids/214055-1000-1000/570766.jpg?v=636537042663300000"
+		]
+	},
+	{
+		"id": 8,
+		"title": "Gaseosa cola nacional",
+		"description": "Una buena gaseosa cola nacional",
+		"code": "AAAA-0007",
+		"price": 0.99,
+		"status": true,
+		"stock": 2500,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/960w/products/4172/10899/manaos-cola-soda-2.25__03295.1654300480.jpg?c=2"
+		]
+	},
+	{
+		"id": 9,
+		"title": "Gaseosa cola nacional",
+		"description": "Una buena gaseosa cola nacional",
+		"code": "AAAA-0008",
+		"price": 0.99,
+		"status": true,
+		"stock": 2500,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/960w/products/4172/10899/manaos-cola-soda-2.25__03295.1654300480.jpg?c=2"
+		]
+	},
+	{
+		"id": 10,
+		"title": "Gaseosa cola internacional",
+		"description": "Una buena gaseosa cola internacional",
+		"code": "AAAA-0009",
+		"price": 1.98,
+		"status": true,
+		"stock": 1500,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/OIP.Zhz83OZoB3h346bBM-EsXwHaHa?rs=1&pid=ImgDetMain"
+		]
+	}
+]

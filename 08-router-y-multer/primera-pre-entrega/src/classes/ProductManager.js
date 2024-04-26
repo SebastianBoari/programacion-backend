@@ -76,14 +76,17 @@ class ProductManager {
      */
     async addProduct(title, description, code, price, status, stock, category, thumbnail) {
         try {
-            if (!title || !description || !code || !price || !status || !stock || !category || !thumbnail) throw new Error('Faltan datos sobre el producto')
+            if(!title) throw new Error('title is required')
+            if(!description) throw new Error('description is required')
+            if(!code) throw new Error('code is required')
+            if(!price) throw new Error('price is required')
+            if(!stock) throw new Error('stock is required')
+            if(!category) throw new Error('category is required')
 
             const products = await this.getProducts()
 
-            if (products.find(item => item.code === code)) {
-                throw new Error('Product code already exists')
-            }
-
+            if (products.find(item => item.code === code)) throw new Error('Product code already exists')
+        
             const newProduct = {
                 id: await this.#idGenerator(),
                 title: title.trim(),
@@ -93,7 +96,7 @@ class ProductManager {
                 status: status !== undefined ? status : true,
                 stock: Number(stock),
                 category: category.trim(),
-                thumbnail: thumbnail ? [thumbnail] : []
+                thumbnail: thumbnail ? thumbnail : []
             }
 
             products.push(newProduct)
@@ -102,13 +105,9 @@ class ProductManager {
 
             const currentProduct = await this.getProductById(newProduct.id)
 
-            if (!currentProduct) {
-                throw new Error('The product could not be added.')
-            }
-
             return currentProduct
         } catch (error) {
-            throw new Error(`Error trying to add a product: ${error}`)
+            throw new Error(`Error trying to add a product: ${error.message}`)
         }
     }
 
