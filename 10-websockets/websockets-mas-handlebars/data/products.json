@@ -1,13 +1,22 @@
 [
 	{
+		"id": 0,
+		"title": "Example",
+		"description": "This is an example product",
+		"price": 300,
+		"thumbnail": "www.example.com/example123.png",
+		"code": "example-code-123",
+		"stock": 999
+	},
+	{
 		"id": 1,
-		"title": "Muy buen vino mendocino",
+		"title": "Vino mendocino",
 		"description": "Un buen vino mendocino",
 		"code": "AAAA-0000",
 		"price": 300,
-		"status": false,
-		"stock": 198,
-		"category": "bebidas alcoholicas",
+		"status": true,
+		"stock": 200,
+		"category": "bebidas",
 		"thumbnail": [
 			"https://oportugues.com/505-large_default/El-Mendocino-Argentino-Malbec-Tinto-2019.jpg",
 			"https://th.bing.com/th/id/OIP.QKx1KZNEe7vfccN3-_bOOQHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain"
@@ -115,6 +124,19 @@
 		"category": "bebidas",
 		"thumbnail": [
 			"https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/960w/products/4172/10899/manaos-cola-soda-2.25__03295.1654300480.jpg?c=2"
+		]
+	},
+	{
+		"id": 10,
+		"title": "Gaseosa cola internacional",
+		"description": "Una buena gaseosa cola internacional",
+		"code": "AAAA-0009",
+		"price": 1.98,
+		"status": true,
+		"stock": 1500,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/OIP.Zhz83OZoB3h346bBM-EsXwHaHa?rs=1&pid=ImgDetMain"
 		]
 	}
 ]

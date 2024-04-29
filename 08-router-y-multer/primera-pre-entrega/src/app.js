@@ -13,4 +13,3 @@ app.use('/api/carts', cartsRouter)
 
 
 app.listen(PORT, () => console.log(`Listening at port ${PORT}`))
-

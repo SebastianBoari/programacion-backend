@@ -1,14 +1,14 @@
 import { Router } from 'express'
-import productManager from '../classes/ProductManager.js'
-import { uploader, mediaPaths } from '../config/multer.config.js'
+import productManager from '../../classes/ProductManager.js'
+import { uploader, mediaPaths } from '../../config/multer.config.js'
 
 const router = Router()
 
 router.get('/', async (req, res) => {
     try {
-        const limit = parseInt(req.query.limit)
-        
-        const products = await productManager.getProducts(limit)
+        const limit = req.query.limit
+
+        const products = await productManager.getProducts(Number(limit))
         
         res.status(200).json({ payload: products })
     } catch (error) {
@@ -18,9 +18,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:pid(\\d+)', async (req, res) => {
     try {
-        const pid = parseInt(req.params.pid)
+        const pid = req.params.pid
+        const productId = Number(pid)
 
-        const product = await productManager.getProductById(pid)
+        const product = await productManager.getProductById(productId)
 
         res.status(200).json({ payload: product })
     } catch (error) {
@@ -48,12 +49,12 @@ router.post('/', uploader.array('media', 7), mediaPaths, async (req, res) => {
         if(req.mediaPaths.length <= 0) {
             const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, thumbnail)
             
-            return res.status(201).json({ status: newProduct })
-        }
-
-        const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, req.mediaPaths)
+            res.status(201).json({ status: newProduct })
+        } else {
+            const newProduct = await productManager.addProduct(title, description, code, price, status, stock, category, req.mediaPaths)
             
-        res.status(201).json({ payload: newProduct })
+            res.status(201).json({ payload: newProduct })
+        }
     } catch (error) {
         res.status(500).json(error.message)
     }
@@ -61,10 +62,11 @@ router.post('/', uploader.array('media', 7), mediaPaths, async (req, res) => {
 
 router.put('/:pid(\\d+)', async (req, res) => {
     try{
-        const pid = parseInt(req.params.pid)
+        const pid = req.params.pid
+        const productId = Number(pid)
         const { field, data } = req.body
 
-        const updatedProduct = await productManager.updateProduct(pid, field, data)
+        const updatedProduct = await productManager.updateProduct(productId, field, data)
 
         res.status(200).json({ payload: updatedProduct })
     } catch(error){
@@ -74,9 +76,10 @@ router.put('/:pid(\\d+)', async (req, res) => {
 
 router.delete('/:pid(\\d+)', async (req, res) => {
     try{
-        const pid = parseInt(req.params.pid)
+        const pid = req.params.pid
+        const productId = Number(pid)
 
-        const deletedProduct = await productManager.deleteProduct(pid)
+        const deletedProduct = await productManager.deleteProduct(productId)
 
         res.status(200).json({ payload: deletedProduct })
     } catch(error){
