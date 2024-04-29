@@ -1,17 +1,23 @@
 import { Router } from 'express'
-import productManager from '../../managers/ProductManager.js'
+import { Server } from 'socket.io'
 
 const router = Router()
 
-router.get('/', async (req, res) => {
-    const products = await productManager.getProducts()
+export default  function realTimeProducts (server) {
+    const io = new Server(server)
 
-    res.render('realTimeProducts', { 
-        static: 'admin',
-        style: 'index',
-        title: 'Real time products',
-        products: products
+    router.get('/', async (req, res) => {
+        
+        io.on('connection', () => {
+            console.log('Nuevo cliente conectado')
+        })
+
+        res.render('realTimeProducts', { 
+            static: 'admin',
+            style: 'index',
+            title: 'Real time products',
+        })
     })
-})
 
-export default router
+    return router
+}
