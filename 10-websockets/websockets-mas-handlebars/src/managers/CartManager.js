@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { __dirname } from '../utils.js'
 import path from 'path'
+import productManager from './ProductManager.js'
 
 class CartManager {
     #carts
@@ -14,45 +15,41 @@ class CartManager {
             products: []
         }]
 
-
         if(!fs.existsSync(this.#path)) {
             fs.writeFileSync(path, JSON.stringify(mock, null, '\t'))
         }
     }
 
     /**
-     * Returns new ID based on quantity of carts on database
-     * @returns {Number} A new ID for a new cart 
-     */
-    async #idGenerator() {
-        try {            
-            await this.#loadCarts()
+    * Returns new ID based on quantity of carts on database
+    * @returns {Number} A new ID for a new cart 
+    */
+    async #idGenerator() {       
+        await this.#loadCarts()
 
-            if (this.#carts.length === 0) {
-                return 1
-            } else {
-                return this.#carts[this.#carts.length - 1].id + 1
-            }
+        if (this.#carts.length === 0) {
+            return 1
+        } else {
+            return this.#carts[this.#carts.length - 1].id + 1
+        }
+    }
+
+    /**
+    * Load all carts on memory
+    */
+    async #loadCarts() {
+        try{
+            const carts = await fs.promises.readFile(this.#path, 'utf-8')
+
+            this.#carts = JSON.parse(carts)
         } catch (error) {
             throw new Error(error)
         }
     }
 
     /**
-     * Load all carts on memory
-     */
-    async #loadCarts() {
-        try{
-            const carts = await fs.promises.readFile(this.#path, 'utf-8')
-            this.#carts = JSON.parse(carts)
-        } catch (error) {
-            throw new Error(error);
-        }
-    }
-
-    /**
-     * Save all the carts in memory in a JSON
-     */
+    * Save all the carts in memory in a JSON
+    */
     async #saveCarts() {
         try{
             await fs.promises.writeFile(this.#path, JSON.stringify(this.#carts, null, '\t'))
@@ -62,42 +59,34 @@ class CartManager {
     }
 
     /**
-     * Get a cart by Id
-     * @param {Number} cid Cart Id to find 
-     * @returns Cart by ID
-     */
+    * Get a cart by Id
+    * @param {Number} cid Cart Id to find 
+    * @returns Cart by ID
+    */
     async getCartById(cid) {
         try{
-            if(!cid) throw new Error('Cart ID is required.')
+            if(cid === undefined || cid === null || isNaN(cid)) throw new Error('Cart ID is required.')
             
             await this.#loadCarts()
 
-            const cartId = Number(cid)
+            if(cid === 'isNaN') throw new Error('Cart ID is not an number.')
 
-            if(cartId === 'isNaN') throw new Error('Cart ID is not an number.')
-
-            const cart = this.#carts.find((cart) => cart.id === cartId)
+            const cart = this.#carts.find((cart) => cart.id === cid)
 
             if(!cart) throw new Error('Cart does not exists.')
 
             return cart
         } catch(error){
-            const check1 = error.message !== 'Cart ID is required.'
-            const check2 = error.message !== 'Cart ID is not an number.'
-            const check3 = error.message !== 'Cart does not exists.'
-
-            if(check1 && check2 && check3) throw new (Error)
-        
-            throw error
+            throw new Error(`An error occurred trying to get the cart by id: ${error.message}`)
         }
     }
 
 
     /**
-     * Create a cart
-     * @param {Array} products Array of products with each product id and quantity of each product
-     * @returns {Object} Created cart
-     */
+    * Create a cart
+    * @param {Array} products Array of products with each product id and quantity of each product
+    * @returns {Object} Created cart
+    */
     async createCart(products) {
         try{
             const newId = await this.#idGenerator()
@@ -105,6 +94,12 @@ class CartManager {
             const newCart = {
                 id: newId,
                 products: products
+            }
+
+            if(products.length > 0){
+                for (const product of products) {
+                    await productManager.getProductById(product.productId)
+                }
             }
 
             this.#carts.push(newCart)
@@ -115,17 +110,17 @@ class CartManager {
 
             return createdCart
         } catch(error) {
-            throw new Error(error.message)
+            throw new Error(`An error occurred trying create a cart: ${error.message}`)
         }
     }
 
     /**
-     * Adds a product to a cart
-     * @param {Number} cid art ID where the product will be added
-     * @param {Number} pid Product ID to be added to the cart
-     * @param {Number} qty Quantity of the product to be added to the cart
-     * @returns An updated cart with the product added
-     */
+    * Adds a product to a cart
+    * @param {Number} cid Cart ID where the product will be added
+    * @param {Number} pid Product ID to be added to the cart
+    * @param {Number} qty Quantity of the product to be added to the cart
+    * @returns An updated cart with the product added
+    */
     async addProductToCart(cid, pid, qty) {
         try{
             await this.#loadCarts()
@@ -157,7 +152,7 @@ class CartManager {
 
             return updatedCart
         } catch(error){
-            throw new Error(error)
+            throw new Error(`An error occurred trying add a product to cart: ${error.message}`)
         }
     }
 }

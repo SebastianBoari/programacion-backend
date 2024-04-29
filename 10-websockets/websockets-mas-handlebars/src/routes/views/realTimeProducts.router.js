@@ -6,10 +6,10 @@ const router = Router()
 router.get('/', async (req, res) => {
     const products = await productManager.getProducts()
 
-    res.render('home', { 
-        static: 'home',
+    res.render('realTimeProducts', { 
+        static: 'admin',
         style: 'index',
-        title: 'home',
+        title: 'Real time products',
         products: products
     })
 })

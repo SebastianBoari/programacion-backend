@@ -24,15 +24,6 @@ function filename (req, file, cb) {
     cb(null,`${getCurrentDate()}-${formattedTitle}-${formattedFileName}`)
 }
 
-// Middleware to obtain array of media paths.
-function mediaPaths (req, res, next) {
-    const mediaPaths = req.files.map(file => file.path)
-
-    req.mediaPaths = mediaPaths
-
-    next()
-}
-
 const storage = multer.diskStorage({
     destination: destination,
     filename: filename
@@ -40,4 +31,4 @@ const storage = multer.diskStorage({
 
 const uploader = multer({ storage })
 
-export { uploader, mediaPaths }
+export { uploader }

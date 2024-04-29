@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import cartManager from '../../classes/CartManager.js'
+import cartManager from '../../managers/CartManager.js'
 
 const router = Router()
 
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
         if(!products){
             const newCart = await cartManager.createCart([])
 
-            res.status(201).json({ payload: newCart })
+            return res.status(201).json({ payload: newCart })
         } 
         
         const newCart = await cartManager.createCart(products)
@@ -38,14 +38,13 @@ router.post('/:cid(\\d+)/product/:pid(\\d+)', async (req, res) => {
     try{
         const cid = req.params.cid
         const pid = req.params.pid
-        const { quantity } = req.body
+        let { quantity } = req.body
 
         const cartId = Number(cid)
         const productId = Number(pid)
+        quantity = quantity ? quantity : 1
 
-        if(!quantity) res.status(400).json({ error: 'Quantity is required.'})
-
-        if(typeof quantity !== 'number') res.status(400).json({ error: 'Quantity is not an number.'})
+        if(isNaN(quantity)) res.status(400).json({ error: 'Quantity is not an number.'})
 
         const updatedCart = await cartManager.addProductToCart(cartId, productId, quantity)
 
