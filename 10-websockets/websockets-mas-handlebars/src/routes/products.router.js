@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import productManager from '../../managers/ProductManager.js'
-import { uploader, mediaPaths } from '../../config/multer.config.js'
+import productManager from '../managers/ProductManager.js'
+import { uploader, mediaPaths } from '../config/multer.config.js'
 
 const router = Router()
 

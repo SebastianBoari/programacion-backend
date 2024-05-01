@@ -167,7 +167,7 @@ class ProductManager {
             
             if((field === 'price' || field === 'stock') && typeof data !== 'number') throw new Error('product field to be modified requires a Number data type')
         
-            if((field === 'status') && (data !== 'true' ^ data !== 'false')) throw new Error('product field to be modified requires a boolean data type')
+            if((field === 'status') && (data !== true && data !== false)) throw new Error('product field to be modified requires a boolean data type')
 
             const products = await this.getProducts()
 
