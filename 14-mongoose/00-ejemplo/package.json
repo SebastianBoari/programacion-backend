@@ -1,0 +1,17 @@
+{
+  "name": "00-ejemplo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "node --watch ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  }
+}
