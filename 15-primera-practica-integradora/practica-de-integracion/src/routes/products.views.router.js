@@ -4,13 +4,11 @@ import productManager from '../Dao/DB/ProductManager.js'
 
 const router = Router()
 
-const productsViewsRouter = (server) => {
+const productsViewsRouter = (httpServer) => {
 
     router.get('/', async (req, res) => {
         try{
             const products =  await productManager.getProducts()
-
-            console.log(products)
 
             res.render('home', {
                 title: 'home',
@@ -24,7 +22,7 @@ const productsViewsRouter = (server) => {
     })
 
     router.get('/realtimeproducts', async (req, res) => {
-        const io = new Server(server)
+        const io = new Server(httpServer)
 
         let products = await productManager.getProducts()
 
