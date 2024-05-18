@@ -1,0 +1,54 @@
+[
+	{
+		"id": 3,
+		"title": "Vermouth Rosso Italiano",
+		"description": "Un buen vermouth rosso Italiano",
+		"code": "AAAA-0002",
+		"price": 245,
+		"status": true,
+		"stock": 20,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/OIP.p2d7GHORqmfS9IRv4BhzaQHaJb?rs=1&pid=ImgDetMain"
+		]
+	},
+	{
+		"id": 4,
+		"title": "Gin Escoces",
+		"description": "Un buen Gin Escoces",
+		"code": "AAAA-0003",
+		"price": 75,
+		"status": true,
+		"stock": 40,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://a-static.mlcdn.com.br/800x560/gin-escoces-hendricks-garrafa-750ml/paodeacucar/1008452/104444785f6309eb1ae7c6fcc55f8250.jpeg"
+		]
+	},
+	{
+		"id": 5,
+		"title": "Vodka de Bielorrusia",
+		"description": "Un buen Vodka Ruso",
+		"code": "AAAA-0004",
+		"price": 50.99,
+		"status": true,
+		"stock": 25,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/R.ddf0a443c6aa5550649048e6c8163cd0?rik=SAYpVBeFhUUViA&pid=ImgRaw&r=0"
+		]
+	},
+	{
+		"id": 6,
+		"title": "Vodka Ruso",
+		"description": "Un buen Vodka Ruso",
+		"code": "AAAA-0005",
+		"price": 7,
+		"status": true,
+		"stock": 20,
+		"category": "bebidas",
+		"thumbnail": [
+			"https://th.bing.com/th/id/R.ddf0a443c6aa5550649048e6c8163cd0?rik=SAYpVBeFhUUViA&pid=ImgRaw&r=0"
+		]
+	}
+]

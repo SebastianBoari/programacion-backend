@@ -1,0 +1,54 @@
+<main>
+    <div id="forms">
+        <form class="form-create" id="form-create">
+            <header>
+                <h1>Create a product</h1>
+            </header>
+
+            <input type="text" placeholder="Title" id="title">
+
+            <input type="text" placeholder="Description" id="description">
+
+            <input type="text" placeholder="Category" id="category">
+
+            <input type="text" placeholder="Code" id="code">
+
+            <input type="number" placeholder="Stock" id="stock">
+
+            <input type="number" placeholder="Price" id="price">
+
+            <input type="text" placeholder="Enter links separated by commas" id="thumbnail">
+
+            <div>
+                <label for="status">Status</label>
+                <input type="checkbox" id="status" checked="true">
+            </div>
+
+            <input type="submit" value="Create">
+        </form>
+
+        <form class="form-update" id="form-update">
+            <header>
+                <h1>Update a product</h1>
+            </header>
+
+            <input type="number" placeholder="Product ID" id="pid">
+            <input type="text" placeholder="Field" id="field">
+            <input type="text" placeholder="Data" id="data">
+
+            <div>
+                <label for="update-status">Status</label>
+                <input type="checkbox" id="update-status">
+            </div>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+    <div id="products">
+
+    </div>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/{{static}}/js/index.js"></script>

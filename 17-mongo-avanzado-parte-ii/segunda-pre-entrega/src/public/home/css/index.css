@@ -1,0 +1,17 @@
+body {
+    background-color: whitesmoke;
+}
+
+#products {
+    margin: 0 auto;
+    padding: 32px;
+}
+
+#products .card {
+    max-width: 240px;
+}
+
+#products .card img {
+    max-width: 120px;
+    max-height: 120px;
+}
