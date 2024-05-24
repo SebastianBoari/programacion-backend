@@ -38,4 +38,12 @@ const productsSchema = mongoose.Schema({
 
 productsSchema.plugin(mongoosePaginate)
 
+productsSchema.pre('find', function() {
+    this.lean()
+})
+
+productsSchema.pre('findOne', function() {
+    this.lean()
+})
+
 export const productsModel = mongoose.model(productsCollection, productsSchema)

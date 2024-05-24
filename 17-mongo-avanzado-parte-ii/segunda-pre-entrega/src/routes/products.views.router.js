@@ -14,7 +14,7 @@ const productsViewsRouter = (httpServer) => {
                 title: 'home',
                 static: 'home',
                 style: 'index',
-                products: products
+                products: products.docs
             })
         } catch(error){
             res.render('error', { error: error})
@@ -28,30 +28,29 @@ const productsViewsRouter = (httpServer) => {
 
         io.on('connection', (socket) => {
             console.log(`New user connected ${socket.id}`)
-            socket.emit('products', products)
+            socket.emit('products', products.docs)
 
             socket.on('delete', async (pid) => {
                 await productManager.deleteProduct(pid)
 
                 products = await productManager.getProducts()
-                socket.emit('products', products)
+                socket.emit('products', products.docs)
             })
 
             socket.on('update', async (pid, field, data) => {
                 await productManager.updateProduct(pid, field, data)
 
                 products = await productManager.getProducts()
-                socket.emit('products', products)
+                socket.emit('products', products.docs)
             })
 
             socket.on('create', async (product) => {
                 await productManager.addProduct(product.title, product.description, product.code, product.price, product.status, product.stock, product.category, product.thumbnail)
                 
                 products = await productManager.getProducts()
-                socket.emit('products', products)
+                socket.emit('products', products.docs)
             })
         })
-
 
         try{
             res.render('realTimeProducts', {
