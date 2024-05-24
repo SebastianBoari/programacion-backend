@@ -6,9 +6,11 @@ router.get('/', async (req, res) => {
     try{
         const carts = await cartManager.getCarts()
 
-        res.status(201).json({ payload: carts })
+        res.status(201).json({ status: 'success', payload: carts })
     } catch(error){
-        res.status(500).json({ error: error.message })
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 
 })
@@ -17,9 +19,11 @@ router.delete('/:cid', async (req, res) => {
     try{
         const carts = await cartManager.deleteCart(req.params.cid)
 
-        res.status(200).json({ payload: carts })
+        res.status(200).json({ status: 'success', payload: carts })
     } catch(error){
-        res.status(500).json({ error: error.message })
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 
 })
@@ -30,9 +34,11 @@ router.get('/:cid', async (req, res) => {
 
         const cart = await cartManager.getCartById(cid)
 
-        res.status(200).json({ payload: cart })
+        res.status(200).json({ status: 'success', payload: cart })
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -48,9 +54,11 @@ router.post('/', async (req, res) => {
         
         const newCart = await cartManager.createCart(products)
 
-        res.status(201).json({ payload: newCart })
+        res.status(201).json({ status: 'success', payload: newCart })
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -66,9 +74,11 @@ router.post('/:cid/product/:pid', async (req, res) => {
 
         const updatedCart = await cartManager.addProductToCart(cid, pid, quantity)
 
-        res.status(201).json({ payload: updatedCart })
+        res.status(201).json({ status: 'success', payload: updatedCart })
     } catch(error) {
-        res.status(500).json({ error: error.message })
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 

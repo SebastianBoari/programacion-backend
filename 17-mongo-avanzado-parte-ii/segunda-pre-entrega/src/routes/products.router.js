@@ -5,13 +5,18 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     try {
-        const limit = parseInt(req.query.limit)
+        const limit = req.query.limit
+        const page = req.query.page
+        const query = req.query.query
+        const sort = req.query.sort
+
+        const products = await productManager.getProducts(limit, page, query, sort)
         
-        const products = await productManager.getProducts(limit)
-        
-        res.status(200).json({ payload: products })
+        res.status(200).json({ status: 'success', payload: products })
     } catch (error) {
-        res.status(500).json(error.message)
+        console.error(error.message)
+
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -21,9 +26,11 @@ router.get('/:pid', async (req, res) => {
 
         const product = await productManager.getProductById(pid)
 
-        res.status(200).json({ payload: product })
+        res.status(200).json({ status: 'success', payload: product })
     } catch (error) {
-        res.status(500).json(error.message)
+        console.error(error.message)
+
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -53,9 +60,11 @@ router.post('/', async (req, res) => {
             thumbnail
         )
             
-        res.status(201).json({ payload: newProduct })
+        res.status(201).json({ status: 'success', payload: newProduct })
     } catch (error) {
-        res.status(500).json(error.message)
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -66,9 +75,11 @@ router.put('/:pid', async (req, res) => {
 
         const updatedProduct = await productManager.updateProduct(pid, field, data)
 
-        res.status(200).json({ payload: updatedProduct })
+        res.status(200).json({ status: 'success', payload: updatedProduct })
     } catch(error){
-        res.status(500).json(error.message)
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 
@@ -78,9 +89,11 @@ router.delete('/:pid', async (req, res) => {
 
         const deletedProduct = await productManager.deleteProduct(pid)
 
-        res.status(200).json({ payload: deletedProduct })
+        res.status(200).json({ status: 'success', payload: deletedProduct })
     } catch(error){
-        res.status(500).json(error.message)
+        console.error(error.message)
+        
+        res.status(500).json({ status: 'error', error: error.message })
     }
 })
 

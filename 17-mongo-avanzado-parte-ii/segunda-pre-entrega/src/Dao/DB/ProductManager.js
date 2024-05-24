@@ -1,26 +1,32 @@
 import { productsModel } from '../../models/products.model.js'
 
 class ProductManager {
-    #products
-
-    /**
-    * Returns all products on database with optional limit
-    * @param {Number} limit - Limit of products (optional)
-    * @returns {Array} Array of objects with all products on database 
-    */
-    async getProducts(limit) {
+/**
+ * Returns products from the database with optional filters.
+ * @param {number} [limit] - Maximum number of products (optional).
+ * @param {number} [page] - Page number of products (optional).
+ * @param {*} [query] - Query to filter products by category (optional).
+ * @param {string} [sort] - Sort order: 'asc' or 'desc' (optional).
+ * @returns {Array<Object>} List of products from the database.
+*/
+    async getProducts(limit, page, query, sort) {
         try {
-            const data = await productsModel.find().lean()
-            
-            this.#products = data
+            if (limit && isNaN(parseInt(limit))) throw new Error('Limit must be a number') 
 
-            if(!limit) return this.#products
-        
-            if(isNaN(limit)) throw new Error('Limit is not a number')
+            if (page && isNaN(parseInt(page))) throw new Error('Page must be a number') 
             
-            if(limit < 0) throw new Error('Limit cannot be a number less than 0')
+            if (query && (/^\s+$/.test(query) || query.trim().length === 0)) throw new Error('Query cannot be empty')
 
-            return this.#products.slice(0, Number(limit))
+            if (sort && (sort !== 'asc' && sort !== 'desc')) throw new Error('Sort must be "asc" or "desc"') 
+
+            const opts = {
+                limit: limit ? parseInt(limit) : 16,
+                page: page ? parseInt(page) : 1,
+                query: query ? { category: new RegExp(query.trim(), 'i') } : {},
+                sort: sort === 'asc' ? 1 : -1
+            }
+
+            return await productsModel.paginate(opts.query, { limit: opts.limit, page: opts.page, sort: { price: opts.sort } })
         } catch (error) {
             throw new Error(`An error occurred trying to get all products: ${error.message}`)
         }
