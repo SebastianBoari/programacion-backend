@@ -1,14 +1,15 @@
 import { productsModel } from '../../models/products.model.js'
 
 class ProductManager {
-/**
- * Returns products from the database with optional filters.
- * @param {number} [limit] - Maximum number of products (optional).
- * @param {number} [page] - Page number of products (optional).
- * @param {*} [query] - Query to filter products by category (optional).
- * @param {string} [sort] - Sort order: 'asc' or 'desc' (optional).
- * @returns {Array<Object>} List of products from the database.
-*/
+    /**
+     * Returns products from the database with optional filters.
+     * 
+     * @param {number} [limit] - Maximum number of products (optional).
+     * @param {number} [page] - Page number of products (optional).
+     * @param {*} [query] - Query to filter products by category (optional).
+     * @param {string} [sort] - Sort order: 'asc' or 'desc' (optional).
+     * @returns {Array<Object>} List of products from the database.
+     */
     async getProducts(limit, page, query, sort) {
         try {
             if (limit && isNaN(parseInt(limit))) throw new Error('Limit must be a number') 
@@ -33,9 +34,11 @@ class ProductManager {
     }
 
     /**
-    * @param {Number} pid - Searched product ID (required)
-    * @returns {Object}
-    */
+     * Get product by id
+     * 
+     * @param {Number} pid - Searched product ID (required)
+     * @returns {Object}
+     */
     async getProductById(pid) {
         try {
             if (pid === undefined || pid === null) throw new Error('Missed required arguments')
@@ -51,17 +54,18 @@ class ProductManager {
     }
     
     /**
-    * Return the new product using "getProductById"
-    * @param {String} title - Title of the new product. (required)
-    * @param {String} description - Description of the new product. (required)
-    * @param {String} code - Unique identification code of the new product. A group of 4 letters and another group of 4 numbers separated by a hyphen. (required)
-    * @param {Number} price - New product price. (required)
-    * @param {Boolean} [status] - True: The product is published publicly. False: The product is stored privately. Default value: true. (optional)
-    * @param {Number} stock - Stock of the new product. (required)
-    * @param {String} category - Category of the new product. (required)
-    * @param {Array} [thumbnail] - An array containing the paths to the new product's multimedia material(optional)
-    * @returns {Object} 
-    */
+     * Creates a new product
+     * 
+     * @param {String} title - Title of the new product. (required)
+     * @param {String} description - Description of the new product. (required)
+     * @param {String} code - Unique identification code of the new product. A group of 4 letters and another group of 4 numbers separated by a hyphen. (required)
+     * @param {Number} price - New product price. (required)
+     * @param {Boolean} [status] - True: The product is published publicly. False: The product is stored privately. Default value: true. (optional)
+     * @param {Number} stock - Stock of the new product. (required)
+     * @param {String} category - Category of the new product. (required)
+     * @param {Array} [thumbnail] - An array containing the paths to the new product's multimedia material(optional)
+     * @returns {Promise} The new product 
+     */
     async addProduct(title, description, code, price, status, stock, category, thumbnail) {
         try {
             if(!title) throw new Error('title is required')
@@ -102,20 +106,21 @@ class ProductManager {
     }
 
     /**
-    * Update a field of a product
-    * - Title (String)
-    * - Description (String)
-    * - Code (String)
-    * - Price (Float)
-    * - Status (Boolean)
-    * - Stock (Int)
-    * - Category (String)
-    * - Thumbnail (Array of strings)
-    * @param {Number} pid Product ID to update (required)
-    * @param {String} field Product field to update (required)
-    * @param {*} data Data updated (required)
-    * @returns {Object}
-    */
+     * Update a field of a product
+     * 
+     * - Title (String)
+     * - Description (String)
+     * - Code (String)
+     * - Price (Float)
+     * - Status (Boolean)
+     * - Stock (Int)
+     * - Category (String)
+     * - Thumbnail (Array of strings)
+     * @param {Number} pid Product ID to update (required)
+     * @param {String} field Product field to update (required)
+     * @param {*} data Data updated (required)
+     * @returns {Object}
+     */
     async updateProduct(pid, field, data) {
         try {
             // Validate parameters
@@ -152,10 +157,11 @@ class ProductManager {
     }
 
     /**
-    * Delete a product by ID and returns all products
-    * @param {Number} pid Product ID of product to delete (required) 
-    * @returns {Array} 
-    */
+     * Delete a product by ID and returns all products
+     * 
+     * @param {Number} pid Product ID of product to delete (required) 
+     * @returns {Array} 
+     */
     async deleteProduct(pid) {
         try {
             if (!pid) throw new Error('Product ID is required')
