@@ -4,9 +4,9 @@ import cartManager from '../Dao/DB/CartManager.js'
 const router = Router()
 
 /**
-    method: GET
-    url: localhost:8080/api/carts
-*/
+ * method: GET
+ * url: localhost:8080/api/carts
+ */
 router.get('/', async (req, res) => {
     try{
         const carts = await cartManager.getCarts()
@@ -20,11 +20,11 @@ router.get('/', async (req, res) => {
 })
 
 /**
-    method: GET
-    error url: localhost:8080/api/carts/6644d5da805f6d8e889469c3 
-    error url: localhost:8080/api/carts/6644d5da805f6d8e889469c4ASD
-    successful url: localhost:8080/api/carts/6644d5da805f6d8e889469c4
-*/
+ * method: GET
+ * error 400 url: localhost:8080/api/carts/:cid+ASD 
+ * error 404 url: localhost:8080/api/carts/:cid changed 1 character
+ * successful url: localhost:8080/api/carts/:cid
+ */
 router.get('/:cid', async (req, res) => {
     try{
         const cid = req.params.cid
@@ -48,16 +48,16 @@ router.get('/:cid', async (req, res) => {
 })
 
 /**
-    method: POST
-    url: localhost:8080/api/carts
-    body (raw/json): 
-    {
-        "products": [
-            { "productId": "6643e0c969dbbb99501283a0", "quantity": 1 },
-            { "productId": "6643f03767ca394962212294", "quantity": 2 }
-        ]
-    }
-*/
+ * method: POST
+ * url: localhost:8080/api/carts
+ * body (raw/json): 
+ {
+    "products": [
+        { "productId": "pid", "quantity": 1 },
+        { "productId": "pid", "quantity": 2 }
+    ]
+ }
+ */
 router.post('/', async (req, res) => {
     try {
         const { products } = req.body
@@ -75,13 +75,13 @@ router.post('/', async (req, res) => {
 })
 
 /**
-    method: POST
-    url: localhost:8080/api/carts/6644d5da805f6d8e889469c4/product/6643e0c969dbbb99501283a0
-    body (raw/json): 
+ * method: POST
+ * url: localhost:8080/api/carts/:cid/product/:pid
+ *  body (raw/json): 
     {
         "quantity": 0
     }
-*/
+ */
 router.post('/:cid/product/:pid', async (req, res) => {
     try{
         const cid = req.params.cid
@@ -103,16 +103,16 @@ router.post('/:cid/product/:pid', async (req, res) => {
 })
 
 /**
-    method: PUT
-    url: localhost:8080/api/carts/6644d5da805f6d8e889469c4
+ *  method: PUT
+    url: localhost:8080/api/carts/:cid
     body (raw/json): 
     {
         "products": [
-            { "productId": "6643e0c969dbbb99501283a0", "quantity": 1 },
-            { "productId": "6643f03767ca394962212294", "quantity": 2 }
+            { "productId": "pid", "quantity": 1 },
+            { "productId": "pid", "quantity": 2 }
         ]
     }
-*/
+ */
 router.put('/:cid', async (req, res) => {
     try{
         const cartId = req.params.cid
@@ -129,13 +129,13 @@ router.put('/:cid', async (req, res) => {
 })
 
 /**
-    method: PUT
-    url: localhost:8080/api/carts/6644d5da805f6d8e889469c4/product/6643e0c969dbbb99501283a0
-    body (raw/json): 
+ * method: PUT
+ * url: localhost:8080/api/carts/:cid/product/:pid
+ * body (raw/json): 
     {
     "quantity": 10
     }
-*/
+ */
 router.put('/:cid/product/:pid', async (req, res) => {
     try{
         const cartId = req.params.cid
@@ -166,9 +166,9 @@ router.delete('/:cid', async (req, res) => {
 })*/
 
 /**
-    method: DELETE
-    url: localhost:8080/api/carts/6653768caa4dad50d0a596e2
-*/
+ * method: DELETE
+ * url: localhost:8080/api/carts/6653768caa4dad50d0a596e2
+ */
 router.delete('/:cid', async (req, res) => {
     try{
         const cartId = req.params.cid
@@ -184,9 +184,9 @@ router.delete('/:cid', async (req, res) => {
 })
 
 /**
-    method: DELETE
-    url: localhost:8080/api/carts/6644d5da805f6d8e889469c4/product/6643e0c969dbbb99501283a0
-*/
+ * method: DELETE
+ * url: localhost:8080/api/carts/6644d5da805f6d8e889469c4/product/6643e0c969dbbb99501283a0
+ */
 router.delete('/:cid/product/:pid', async (req, res) => {
     try{
         const cartId = req.params.cid

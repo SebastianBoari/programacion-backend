@@ -115,7 +115,6 @@ router.put('/:pid', async (req, res) => {
     }
 })
 
-
 /**
  * method: DELETE
  * url: localhost:8080/api/products/:pid
