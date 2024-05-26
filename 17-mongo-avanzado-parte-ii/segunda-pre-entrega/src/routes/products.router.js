@@ -3,6 +3,10 @@ import productManager from '../Dao/DB/ProductManager.js'
 
 const router = Router()
 
+/**
+ * method: GET
+ * url: localhost:8080/api/products
+ */
 router.get('/', async (req, res) => {
     try {
         const limit = req.query.limit
@@ -20,6 +24,10 @@ router.get('/', async (req, res) => {
     }
 })
 
+/**
+ * method: GET
+ * url: localhost:8080/api/products/:pid
+ */
 router.get('/:pid', async (req, res) => {
     try {
         const pid = req.params.pid
@@ -34,6 +42,21 @@ router.get('/:pid', async (req, res) => {
     }
 })
 
+/**
+ * method: POST
+ * url: localhost:8080/api/products
+ * body (raw/json):
+ * {
+    "title": "Title",
+    "description": "description",
+    "code": "AAAA-0000",
+    "price": 1,
+    "status": true,
+    "stock": 1,
+    "category": "test",
+    "thumbnail": ["url-image"]
+    }
+ */
 router.post('/', async (req, res) => {
     try {
         if(!req.body) return res.status(400).json({ error: 'required data is missing' }) 
@@ -68,6 +91,15 @@ router.post('/', async (req, res) => {
     }
 })
 
+/**
+ * method: PUT
+ * url: localhost:8080/api/products/:pid
+ * body (raw/json):
+ * {
+    "field": "code",
+    "data": "AAAA-0011"
+    }
+ */
 router.put('/:pid', async (req, res) => {
     try{
         const pid = req.params.pid
@@ -83,6 +115,11 @@ router.put('/:pid', async (req, res) => {
     }
 })
 
+
+/**
+ * method: DELETE
+ * url: localhost:8080/api/products/:pid
+ */
 router.delete('/:pid', async (req, res) => {
     try{
         const pid = req.params.pid
