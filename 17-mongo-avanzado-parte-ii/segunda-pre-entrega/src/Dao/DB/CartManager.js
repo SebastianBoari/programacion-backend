@@ -3,10 +3,10 @@ import { cartsModel } from '../../models/carts.model.js'
 
 class CartManager { 
     /**
-    * Get all carts
-    * 
-    * @returns all carts on database
-    */
+     * Get all carts
+     *  
+     * @returns all carts on database
+     */
     async getCarts(){
         try{
             const carts = await cartsModel.find()
@@ -18,11 +18,11 @@ class CartManager {
     }
 
     /**
-    * Get a cart by Id
-    * 
-    * @param {mongoose.Types.ObjectId} cid Cart Id to find 
-    * @returns {Promise} Cart by ID
-    */
+     * Get a cart by Id
+     * 
+     * @param {mongoose.Types.ObjectId} cid Cart Id to find 
+     * @returns {Promise} Cart by ID
+     */
     async getCartById(cid) {
         try{
             if(!cid) throw new Error('Cart ID is required.')
@@ -40,11 +40,11 @@ class CartManager {
     }
 
     /**
-    * Creates a new shopping cart
-    * 
-    * @param {Array} products Array containing ObjectId of products
-    * @returns {Promise} The newly created cart
-    */
+     * Creates a new shopping cart
+     * 
+     * @param {Array} products Array containing ObjectId of products
+     * @returns {Promise} The newly created cart
+     */
     async createCart(products) {
         try{
             if(products && !Array.isArray(products)) throw new Error('Products must be an array')
@@ -62,13 +62,13 @@ class CartManager {
     }
 
     /**
-    * Adds a product to a cart
-    * 
-    * @param {mongoose.Types.ObjectId} cid Cart ID where the product will be added
-    * @param {mongoose.Types.ObjectId} pid Product ID to be added to the cart
-    * @param {Number} qty Quantity of the product to be added to the cart
-    * @returns {Promise} An updated cart with the product added
-    */
+     * Adds a product to a cart
+     * 
+     * @param {mongoose.Types.ObjectId} cid Cart ID where the product will be added
+     * @param {mongoose.Types.ObjectId} pid Product ID to be added to the cart
+     * @param {Number} qty Quantity of the product to be added to the cart
+     * @returns {Promise} An updated cart with the product added
+     */
     async addProductToCart(cid, pid, qty) {
         try{
             if(!cid || !pid) throw new Error('Missed required data.')
@@ -102,12 +102,12 @@ class CartManager {
     }
 
     /**
-    * Adds many products to a cart, overwriting any existing products in the cart.
-    * 
-    * @param {mongoose.Types.ObjectId} cid - Cart ID where the product will be added.
-    * @param {Array.<{ productId: mongoose.Types.ObjectId, quantity: Number}>} products - Array of products to be added to the cart.
-    * @returns {Promise} An updated cart with the products added.
-    */
+     * Adds many products to a cart, overwriting any existing products in the cart.
+     * 
+     * @param {mongoose.Types.ObjectId} cid - Cart ID where the product will be added.
+     * @param {Array.<{ productId: mongoose.Types.ObjectId, quantity: Number}>} products - Array of products to be added to the cart.
+     * @returns {Promise} An updated cart with the products added.
+     */
     async addManyProductsToCart(cid, products) {
         try{
             if(!cid) throw new Error('Missed required data.')
@@ -127,13 +127,13 @@ class CartManager {
     }
     
     /**
-    * Updates the quantity of a product in the cart.
-    * 
-    * @param {mongoose.Types.ObjectId} cid - Cart ID where the product is located.
-    * @param {mongoose.Types.ObjectId} pid - Product ID to update the quantity.
-    * @param {number} [qty=1] - The new quantity of the product. Defaults to 1 if not provided.
-    * @returns {Promise} An updated cart with the product quantity updated.
-    */
+     * Updates the quantity of a product in the cart.
+     * 
+     * @param {mongoose.Types.ObjectId} cid - Cart ID where the product is located.
+     * @param {mongoose.Types.ObjectId} pid - Product ID to update the quantity.
+     * @param {number} [qty=1] - The new quantity of the product. Defaults to 1 if not provided.
+     * @returns {Promise} An updated cart with the product quantity updated.
+     */
     async updateProductQuantity(cid, pid, qty){
         try{
             if(!cid || !pid) throw new Error('Missed required data.')
@@ -164,10 +164,10 @@ class CartManager {
 
     /** 
      * Delete a cart by id and show all carts TEST METHOD ONLY
-    * 
-    * @param {mongoose.Types.ObjectId} cid Cart Id to delete
-    * @returns {Promise} All carts 
-    */
+     * 
+     * @param {mongoose.Types.ObjectId} cid Cart Id to delete
+     * @returns {Promise} All carts 
+     */
     async deleteCart(cid){
         try{
             await cartsModel.findByIdAndDelete(cid)
@@ -181,12 +181,12 @@ class CartManager {
     }
 
     /**
-    * Deletes one product by id from a cart.
-    * 
-    * @param {mongoose.Types.ObjectId} cid - Cart ID from which the product will be deleted.
-    * @param {mongoose.Types.ObjectId} pid - Product ID to be deleted from the cart.
-    * @returns {Promise} updated cart with no products 
-    */ 
+     * Deletes one product by id from a cart.
+     * 
+     * @param {mongoose.Types.ObjectId} cid - Cart ID from which the product will be deleted.
+     * @param {mongoose.Types.ObjectId} pid - Product ID to be deleted from the cart.
+     * @returns {Promise} updated cart with no products 
+     */ 
     async deleteProductOfCart(cid, pid){
         try{
             if (!cid || !pid) throw new Error('Missed required data')
@@ -213,11 +213,11 @@ class CartManager {
     }
 
     /**
-    * Deletes all products from the cart.
-    * 
-    * @param {mongoose.Types.ObjectId} cid - Cart ID from which all products will be deleted.
-    * @returns {Promise} An updated cart with all products deleted.
-    */
+     * Deletes all products from the cart.
+     * 
+     * @param {mongoose.Types.ObjectId} cid - Cart ID from which all products will be deleted.
+     * @returns {Promise} An updated cart with all products deleted.
+     */
     async deleteProductsOfCart(cid){
         try{
             if(!cid) throw new Error('Cart ID is required.')
