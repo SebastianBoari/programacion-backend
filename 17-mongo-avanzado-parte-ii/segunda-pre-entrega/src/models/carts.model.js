@@ -11,8 +11,14 @@ const cartsSchema = mongoose.Schema({
     products: [productSchema]
 })
 
-cartsSchema.pre('findOne', function() {
+cartsSchema.pre('find', function(next) {
     this.populate('products.productId')
+    next()
+})
+
+cartsSchema.pre('findOne', function(next) {
+    this.populate('products.productId')
+    next()
 })
 
 export const cartsModel = mongoose.model(cartsCollection, cartsSchema)
