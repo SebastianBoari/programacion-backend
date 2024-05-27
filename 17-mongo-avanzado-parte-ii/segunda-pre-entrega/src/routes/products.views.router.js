@@ -9,9 +9,9 @@ const productsViewsRouter = (httpServer) => {
         try{
             const products =  await productManager.getProducts()
 
-            res.render('home', {
-                title: 'home',
-                static: 'home',
+            res.render('products', {
+                title: 'products',
+                static: 'products',
                 style: 'index',
                 products: products.docs
             })
