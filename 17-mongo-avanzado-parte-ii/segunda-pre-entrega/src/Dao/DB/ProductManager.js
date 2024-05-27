@@ -4,30 +4,35 @@ class ProductManager {
     /**
      * Returns products from the database with optional filters.
      * 
-     * @param {number} [limit] - Maximum number of products (optional).
-     * @param {number} [page] - Page number of products (optional).
-     * @param {*} [query] - Query to filter products by category (optional).
-     * @param {string} [sort] - Sort order: 'asc' or 'desc' (optional).
-     * @returns {Array<Object>} List of products from the database.
+     * @param {number} [limit] - Maximum number of products (optional: 10 by default). 
+     * @param {number} [page] - Page number of products (optional: 1 by default).
+     * @param {string} [query] - Query to filter products by category (optional: no filter).
+     * @param {string} [sort] - Sort order: 'asc' or 'desc' (optional: descendent by default).
+     * @param {string} [status] - Status of product, 'available' or 'unavailable' (optional: view all by default)
+     * @returns {Promise} List of products from the database.
      */
-    async getProducts(limit, page, query, sort) {
+    async getProducts(limit, page, query, sort, status) {
         try {
+            // Validate parameters
             if (limit && isNaN(parseInt(limit))) throw new Error('Limit must be a number') 
-
             if (page && isNaN(parseInt(page))) throw new Error('Page must be a number') 
-            
             if (query && (/^\s+$/.test(query) || query.trim().length === 0)) throw new Error('Query cannot be empty')
+            if (sort && sort !== 'asc' && sort !== 'desc') throw new Error('Sort must be "asc" or "desc"') 
+            if(status && status !== 'available' && status !== 'unavailable') throw new Error('Status must be "available" or "unavailable"') 
 
-            if (sort && (sort !== 'asc' && sort !== 'desc')) throw new Error('Sort must be "asc" or "desc"') 
-
+            // Build the query object
+            const queryObject = {}
+            if (query) queryObject.category = new RegExp(query.trim(), 'i')
+            if (status) queryObject.status = status === 'available' ? true : false
+    
+            // Search options
             const opts = {
-                limit: limit ? parseInt(limit) : 16,
+                limit: limit ? parseInt(limit) : 10,
                 page: page ? parseInt(page) : 1,
-                query: query ? { category: new RegExp(query.trim(), 'i') } : {},
-                sort: sort === 'asc' ? 1 : -1
+                sort: sort === 'asc' ? { price: 1 } : { price: -1 },
             }
 
-            return await productsModel.paginate(opts.query, { limit: opts.limit, page: opts.page, sort: { price: opts.sort } })
+            return await productsModel.paginate(queryObject, { ...opts, lean: true })
         } catch (error) {
             throw new Error(`An error occurred trying to get all products: ${error.message}`)
         }

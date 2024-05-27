@@ -5,7 +5,6 @@ import productManager from '../Dao/DB/ProductManager.js'
 const router = Router()
 
 const productsViewsRouter = (httpServer) => {
-
     router.get('/', async (req, res) => {
         try{
             const products =  await productManager.getProducts()

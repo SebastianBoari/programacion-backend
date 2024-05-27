@@ -13,8 +13,9 @@ router.get('/', async (req, res) => {
         const page = req.query.page
         const query = req.query.query
         const sort = req.query.sort
+        const status = req.query.status
 
-        const products = await productManager.getProducts(limit, page, query, sort)
+        const products = await productManager.getProducts(limit, page, query, sort, status)
         
         res.status(200).json({ status: 'success', payload: products })
     } catch (error) {
