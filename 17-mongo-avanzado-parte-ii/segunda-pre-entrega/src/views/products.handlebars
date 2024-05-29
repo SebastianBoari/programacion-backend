@@ -1,19 +1,48 @@
 <div id="products">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {{#each products}}
-        <div class="col">
-            <div class="card {{this._id}}">
-                <img src="{{this.thumbnail}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
-
-                <div class="card-body">
-                    <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text">
-                        {{this.description}}
-                    </p>
-                </div>
+    <div class="products-container">
+        {{#each products.docs}}
+        <div class="card" style="width: 18rem;">
+            <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.title}}"
+                style="width: 18rem; height: 10rem; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <p class="card-text">${{this.price}}</p>
+                <a href="" class="btn btn-light">Ver más</a>
+                <a href="" class="btn btn-primary">Agregar al carrito</a>
             </div>
         </div>
         {{/each}}
     </div>
+
+    <nav aria-label="Page navigation example" class="products-pagination">
+        <ul class="pagination">
+            {{#if products.prevLink}}
+            <li class="page-item">
+                <a class="page-link" href="{{products.prevLink}}">Anterior</a>
+            </li>
+            {{else}}
+            <li class="page-item disabled">
+                <span class="page-link" href="{{products.prevLink}}">Anterior</span>
+            </li>
+            {{/if}}
+
+            {{#each products.totalPagesArray}}
+            <li class="page-item">
+                <a class="page-link" href="/products?page={{this}}">{{this}}</a>
+            </li>
+            {{/each}}
+
+            {{#if products.nextLink}}
+            <li class="page-item">
+                <a class="page-link" href="{{products.nextLink}}">Siguiente</a>
+            </li>
+            {{else}}
+            <li class="page-item disabled">
+                <span class="page-link" href="{{products.nextLink}}">Siguiente</span>
+            </li>
+            {{/if}}
+        </ul>
+    </nav>
 </div>
 <script src="/{{static}}/js/index.js"></script>

@@ -5,15 +5,32 @@ import productManager from '../Dao/DB/ProductManager.js'
 const router = Router()
 
 const productsViewsRouter = (httpServer) => {
-    router.get('/', async (req, res) => {
+    router.get('/products', async (req, res) => {
         try{
-            const products =  await productManager.getProducts()
+            const limit = req.query.limit
+            const page = req.query.page
+            const query = req.query.query
+            const sort = req.query.sort
+            const status = req.query.status
+
+            const products = await productManager.getProducts(limit, page, query, sort, status)
+
+            // Pagination utils
+            if(products.totalPages > 1){
+				products.totalPagesArray = []
+				for (let i = 1; i <= products.totalPages; i++) {
+					products.totalPagesArray.push(i)
+				}
+			}
+
+            products.prevLink = products.hasPrevPage ? `?page=${products.prevPage}` : ''
+			products.nextLink = products.hasNextPage ? `?page=${products.nextPage}` : ''
 
             res.render('products', {
                 title: 'products',
                 static: 'products',
                 style: 'index',
-                products: products.docs
+                products: products
             })
         } catch(error){
             res.render('error', { error: error})
