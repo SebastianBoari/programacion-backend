@@ -1,3 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">🛒</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/products">Products</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="updateQueryParam('query', 'bebidas')">Alcoholic
+                                beverages</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="updateQueryParam('query', 'alimentos')">Food</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Sort
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="updateQueryParam('sort', 'asc')">Ascendent
+                                prices</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="updateQueryParam('sort', 'desc')">Descendent
+                                prices</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Status
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                onclick="updateQueryParam('status', 'available')">Availables Only</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                onclick="updateQueryParam('status', 'unavailable')">Unavailable only</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div id="products">
     <div class="products-container">
         {{#each products.docs}}
@@ -19,30 +89,45 @@
         <ul class="pagination">
             {{#if products.prevLink}}
             <li class="page-item">
-                <a class="page-link" href="{{products.prevLink}}">Anterior</a>
+                <a class="page-link" href="{{products.prevLink}}">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
             </li>
             {{else}}
             <li class="page-item disabled">
-                <span class="page-link" href="{{products.prevLink}}">Anterior</span>
+                <span class="page-link" href="{{products.prevLink}}">
+                    <span aria-hidden="true">&laquo;</span>
+                </span>
             </li>
             {{/if}}
 
             {{#each products.totalPagesArray}}
             <li class="page-item">
-                <a class="page-link" href="/products?page={{this}}">{{this}}</a>
+                <a class="page-link" href="#" onclick="updateQueryParam('page', {{this}})">{{this}}</a>
             </li>
             {{/each}}
 
             {{#if products.nextLink}}
             <li class="page-item">
-                <a class="page-link" href="{{products.nextLink}}">Siguiente</a>
+                <a class="page-link" href="{{products.nextLink}}">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
             </li>
             {{else}}
             <li class="page-item disabled">
-                <span class="page-link" href="{{products.nextLink}}">Siguiente</span>
+                <span class="page-link" href="{{products.nextLink}}">
+                    <span aria-hidden="true">&raquo;</span>
+                </span>
             </li>
             {{/if}}
         </ul>
     </nav>
 </div>
+<script>
+    function updateQueryParam(key, value) {
+        const url = new URL(window.location);
+        url.searchParams.set(key, value);
+        window.location = url.toString();
+    }
+</script>
 <script src="/{{static}}/js/index.js"></script>

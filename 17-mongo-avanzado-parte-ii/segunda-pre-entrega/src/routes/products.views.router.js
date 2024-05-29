@@ -15,14 +15,13 @@ const productsViewsRouter = (httpServer) => {
 
             const products = await productManager.getProducts(limit, page, query, sort, status)
 
-            // Pagination utils
+            // Pagination buttons
             if(products.totalPages > 1){
 				products.totalPagesArray = []
 				for (let i = 1; i <= products.totalPages; i++) {
 					products.totalPagesArray.push(i)
 				}
 			}
-
             products.prevLink = products.hasPrevPage ? `?page=${products.prevPage}` : ''
 			products.nextLink = products.hasNextPage ? `?page=${products.nextPage}` : ''
 
