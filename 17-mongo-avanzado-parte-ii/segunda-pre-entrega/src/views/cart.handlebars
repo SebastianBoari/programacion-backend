@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">🛒</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/products">Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="products">
+    <div class="products-container">
+        {{#each cart.products}}
+        <div class="card" style="width: 18rem;">
+            <img src="{{this.productId.thumbnail}}" class="card-img-top" alt="{{this.productId.title}}"
+                style="width: 18rem; height: 10rem; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{this.productId.title}}</h5>
+                <p class="card-text">{{this.productId.description}}</p>
+                <p class="card-text">${{this.productId.price}}</p>
+                <p class="card-text">ID: {{this.productId._id}}</p>
+                <p class="card-text">Disponible</p>
+
+                <div class="input-group quantity-selector mb-3" data-id="{{this.productId._id}}">
+                    <button class="btn btn-outline-secondary btn-decrement disabled" type="button">-</button>
+                    <input type="text" class="form-control text-center quantity-input" value="{{this.quantity}}"
+                        aria-label="Quantity">
+                    <button class="btn btn-outline-secondary btn-increment disabled" type="button">+</button>
+                </div>
+
+                <a href="/product/{{this.productId._id}}" class="btn btn-light">Ver más</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>

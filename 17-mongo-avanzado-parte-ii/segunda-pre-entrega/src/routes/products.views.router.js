@@ -32,6 +32,8 @@ const productsViewsRouter = (httpServer) => {
                 products: products
             })
         } catch(error){
+            console.error(error.message)
+
             res.render('error', { error: error})
         }
     })
@@ -49,6 +51,8 @@ const productsViewsRouter = (httpServer) => {
                 product: currentProduct
             })
         } catch(error){
+            console.error(error.message)
+
             res.render('error', { error: error})
         }
     })
@@ -92,6 +96,8 @@ const productsViewsRouter = (httpServer) => {
                 style: 'index'
             })
         } catch(error){
+            console.error(error.message)
+            
             res.render('error', { error: error})
         }
     })

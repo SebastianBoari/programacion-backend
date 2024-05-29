@@ -6,6 +6,7 @@ import productsRouter from './routes/products.router.js'
 import cartsRouter from './routes/carts.router.js'
 import productsViewsRouter from './routes/products.views.router.js'
 import chatRouter from './routes/chat.router.js'
+import cartViewsRouter from './routes/carts.views.router.js'
 
 import { __dirname } from './utils.js'
 import { connection } from './config/mongoose.config.js'
@@ -35,3 +36,4 @@ app.use('/api/products', productsRouter)
 app.use('/api/carts', cartsRouter)
 app.use('/', productsViewsRouter(httpServer))
 app.use('/chat', chatRouter(httpServer))
+app.use('/cart', cartViewsRouter)

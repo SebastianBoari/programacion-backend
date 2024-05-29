@@ -78,10 +78,21 @@
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.description}}</p>
                 <p class="card-text">${{this.price}}</p>
-                <p class="card-text">{{#if this.status}} Disponible {{else}} Fuera de stock {{/if}}</p>
                 <p class="card-text">ID: {{this.id}}</p>
-                <a href="" class="btn btn-light">Ver más</a>
-                <a href="" class="btn btn-primary">Agregar al carrito</a>
+
+                {{#if this.status}}
+                <p class="card-text">Disponible</p>
+                <div class="input-group quantity-selector mb-3" data-id="{{this.id}}">
+                    <button class="btn btn-outline-secondary btn-decrement" type="button">-</button>
+                    <input type="text" class="form-control text-center quantity-input" value="1" aria-label="Quantity">
+                    <button class="btn btn-outline-secondary btn-increment" type="button">+</button>
+                </div>
+                <button class="btn btn-primary add-to-cart" data-id="{{this.id}}">Agregar al carrito</button>
+                {{else}}
+                <p class="card-text">Fuera de stock</p>
+                {{/if}}
+
+                <a href="/product/{{this.id}}" class="btn btn-light">Ver más</a>
             </div>
         </div>
         {{/each}}

@@ -5,6 +5,12 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/products">Products</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
@@ -17,9 +23,19 @@
                 <h5 class="card-title">{{product.title}}</h5>
                 <p class="card-text">{{product.description}}</p>
                 <p class="card-text">${{product.price}}</p>
-                <p class="card-text">{{#if product.status}} Disponible {{else}} Fuera de stock {{/if}}</p>
-                <p class="card-text">ID: {{product.id}}</p>
-                <a href="" class="btn btn-primary">Agregar al carrito</a>
+                <p class="card-text">ID: {{product._id}}</p>
+
+                {{#if product.status}}
+                <p class="card-text">Disponible</p>
+                <div class="input-group quantity-selector mb-3" data-id="{{product._id}}">
+                    <button class="btn btn-outline-secondary btn-decrement" type="button">-</button>
+                    <input type="text" class="form-control text-center quantity-input" value="1" aria-label="Quantity">
+                    <button class="btn btn-outline-secondary btn-increment" type="button">+</button>
+                </div>
+                <button class="btn btn-primary add-to-cart" data-id="{{product._id}}">Agregar al carrito</button>
+                {{else}}
+                <p class="card-text">Fuera de stock</p>
+                {{/if}}
             </div>
         </div>
     </div>

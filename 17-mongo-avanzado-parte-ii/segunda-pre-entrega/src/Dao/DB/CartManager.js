@@ -29,7 +29,7 @@ class CartManager {
 
             if (!mongoose.Types.ObjectId.isValid(cid)) throw new Error('Invalid Cart ID.')
 
-            const cart = await cartsModel.findById(cid)
+            const cart = await cartsModel.findById(cid).lean()
 
             if(!cart) throw new Error('Cart does not exists.')
 
@@ -78,7 +78,7 @@ class CartManager {
 
             if(!qty) qty = 1
 
-            const currentCart = await this.getCartById(cid)
+            const currentCart = await cartsModel.findById(cid)
             if (!currentCart) throw new Error('Cart does not exist')
 
             let productExists = false
@@ -113,7 +113,7 @@ class CartManager {
             if(!cid) throw new Error('Missed required data.')
             if (!mongoose.Types.ObjectId.isValid(cid)) throw new Error('Invalid Cart ID.')
 
-            const currentCart = await this.getCartById(cid)
+            const currentCart = await cartsModel.findById(cid)
             if (!currentCart) throw new Error('Cart does not exist')
 
             currentCart.products = products
@@ -141,7 +141,7 @@ class CartManager {
             if (!mongoose.Types.ObjectId.isValid(pid)) throw new Error('Invalid Product ID.')
             if(!qty) qty = 1
         
-                const currentCart = await this.getCartById(cid)
+                const currentCart = await cartsModel.findById(cid)
                 if (!currentCart) throw new Error('Cart does not exist')
                 
                 let productExists = false
@@ -172,7 +172,7 @@ class CartManager {
         try{
             await cartsModel.findByIdAndDelete(cid)
 
-            const updatedCarts = await this.getCarts()
+            const updatedCarts = await cartsModel.find()
 
             return updatedCarts
         } catch(error){
@@ -194,7 +194,7 @@ class CartManager {
             if (!mongoose.Types.ObjectId.isValid(cid)) throw new Error('Invalid Cart ID.')
             if (!mongoose.Types.ObjectId.isValid(pid)) throw new Error('Invalid Product ID.')
         
-            const currentCart = await this.getCartById(cid)
+            const currentCart = await cartsModel.findById(cid)
             if (!currentCart) throw new Error('Cart does not exist')
     
             const initialProductCount = currentCart.products.length
@@ -223,7 +223,7 @@ class CartManager {
             if(!cid) throw new Error('Cart ID is required.')
             if (!mongoose.Types.ObjectId.isValid(cid)) throw new Error('Invalid Cart ID.')
 
-            const currentCart = await this.getCartById(cid)
+            const currentCart = await cartsModel.findById(cid)
             if (!currentCart) throw new Error('Cart does not exist')
 
             currentCart.products = []
