@@ -36,6 +36,24 @@ const productsViewsRouter = (httpServer) => {
         }
     })
 
+    router.get('/product/:pid', async (req, res) => {
+        try{
+            const productId = req.params.pid
+
+            const currentProduct = await productManager.getProductById(productId)
+
+            res.render('product', {
+                title: 'Product',
+                static: 'products',
+                style: 'index',
+                product: currentProduct
+            })
+        } catch(error){
+            res.render('error', { error: error})
+        }
+    })
+
+
     router.get('/realtimeproducts', async (req, res) => {
         const io = new Server(httpServer)
 

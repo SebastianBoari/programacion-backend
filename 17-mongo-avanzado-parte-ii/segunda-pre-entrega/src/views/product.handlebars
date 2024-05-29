@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">🛒</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<div id="products">
+    <div class="products-container">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.thumbnail}}" class="card-img-top" alt="{{product.title}}"
+                style="width: 18rem; height: 10rem; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <p class="card-text">${{product.price}}</p>
+                <p class="card-text">{{#if product.status}} Disponible {{else}} Fuera de stock {{/if}}</p>
+                <p class="card-text">ID: {{product.id}}</p>
+                <a href="" class="btn btn-primary">Agregar al carrito</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateQueryParam(key, value) {
+        const url = new URL(window.location);
+        url.searchParams.set(key, value);
+        window.location = url.toString();
+    }
+</script>
+<script src="/{{static}}/js/index.js"></script>

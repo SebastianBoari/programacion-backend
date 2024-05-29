@@ -48,7 +48,7 @@ class ProductManager {
         try {
             if (pid === undefined || pid === null) throw new Error('Missed required arguments')
 
-            const currentProduct = await productsModel.findOne({ _id: pid })
+            const currentProduct = await productsModel.findOne({ _id: pid }).lean()
 
             if(!currentProduct) throw new Error('Product does not exists')
 
